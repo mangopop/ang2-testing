@@ -22,7 +22,7 @@ describe('Component: Header', () => {
       declarations: [HeaderComponent],
     });
 
-    //this might be alternative way // create component and test fixture
+    // this might be alternative way // create component and test fixture
     // fixture returns the component and surrounding environment
     fixture = TestBed.createComponent(HeaderComponent);
     // get test component from the fixture

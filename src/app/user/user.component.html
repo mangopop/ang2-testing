@@ -1,0 +1,9 @@
+<h3>User</h3>
+
+<!--this didn't work with single fucking letter-->
+
+<div *ngFor='let item of user | async'>
+  <p>{{item.name}}</p>
+  <p>{{item.phone}}</p>
+  <p>{{item.email}}</p>
+</div>

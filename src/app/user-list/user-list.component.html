@@ -1,5 +1,5 @@
 <ul>
-  <li class="users" *ngFor='let user of users | async'>{{user.name}}</li>
+  <li (click)="gotoUser(user)" class="users" *ngFor='let user of users | async'>{{user.name}}</li>
 </ul>
 
 {{errorMessage}}

@@ -4,14 +4,21 @@ import { Observable } from 'rxjs/Observable';
 // import 'rxjs/add/operator/map';
 // import 'rxjs/add/operator/catch';
 import { Http, Response } from '@angular/http';
-import { USERS } from '../mock-users';
+// import { USERS } from '../mock-users';
 
 @Injectable()
 export class UsersService {
+  users;
 
   constructor(private http: Http) { }
 
-  users;
+  getUser(id:number): Observable<any>{
+        return this.http.get(`https://jsonplaceholder.typicode.com/users`)
+      .map((res: Response) => {
+        return res.json().filter(data => data.id === 1) || {};
+      })
+      .catch( (error:any) => Observable.throw(error.json().error || 'Server error'));
+  }
 
   getUsers() {
     // console.log(USERS); //
@@ -24,7 +31,7 @@ export class UsersService {
         return res.json() || {};
       })
 
-    //...errors if any
+    // ...errors if any
     .catch( (error:any) => Observable.throw(error.json().error || 'Server error'));
 
     // return new Observable(observer => {

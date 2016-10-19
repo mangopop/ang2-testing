@@ -14,7 +14,6 @@ describe('Service: Users', () => {
 let mockBackend: MockBackend;
 
   beforeEach(() => {
-    
 
     TestBed.configureTestingModule({
       imports: [HttpModule],
@@ -55,7 +54,6 @@ let mockBackend: MockBackend;
                 {
                   id: 26,
                   name: 'simon',
-                  
                 }]
             }
             )));

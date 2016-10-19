@@ -1,24 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import { UsersService } from './shared/users.service';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit{
+export class AppComponent{
   title = 'app works!';
-  users;
 
-  constructor(private UsersService:UsersService){
-  }
-
-  goGetUsers(): void {
-    this.users = this.UsersService.getUsers();
-    
-  }
-
-  ngOnInit(){
-    this.goGetUsers();
-  }
 }
