@@ -2,8 +2,19 @@
 
 <!--this didn't work with single fucking letter-->
 
-<div *ngFor='let item of user | async'>
+<ul>
+  <!--required a null gaurd because this was trying to display text before html was loaded. Bit shit.
+  other option is to user startWith and assign name to ''-->
+  <li>{{(user$ | async).name}}</li>
+  <li>{{(user$ | async).email}}</li>
+  
+</ul>
+
+<img src="{{(user$ | async).imageUrl}}" alt="">
+
+
+<!--<div *ngFor='let item of user | async'>
   <p>{{item.name}}</p>
   <p>{{item.phone}}</p>
   <p>{{item.email}}</p>
-</div>
+</div>-->
