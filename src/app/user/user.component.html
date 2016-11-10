@@ -5,7 +5,7 @@
 <ul>
   <!--required a null gaurd because this was trying to display text before html was loaded. Bit shit.
   other option is to user startWith and assign name to ''-->
-  <li>{{(user$ | async).name}}</li>
+  <li class="name">{{(user$ | async).name}}</li>
   <li>{{(user$ | async).email}}</li>
   
 </ul>

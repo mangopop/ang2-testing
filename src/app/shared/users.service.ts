@@ -34,7 +34,7 @@ export class UsersService {
         // return res.json().filter(data => data.id === 1) || {}; for extracting 1 user from list
         return res.json() || {};
       })
-            .catch( (error:any) => Observable.throw(error.json().error || 'Server error'));
+      .catch( (error:any) => Observable.throw(error.json().error || 'Server error'));
   }
 
   getUser(id:number): Observable<any>{

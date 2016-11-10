@@ -24,9 +24,8 @@ export class UserComponent implements OnInit {
     this.route.params.subscribe((params:Params) => { //why doesn't map work on params? forEach can replace subscribe here
       let id = +params['id'];
       this.user$ = this.UsersService.getUser(id);    
-    })
-
-    ;    
+    });
+        
     this.user$.subscribe(
         data => console.log(data.name),
         err => console.error(err),
